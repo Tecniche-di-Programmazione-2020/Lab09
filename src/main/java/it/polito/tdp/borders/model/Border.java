@@ -35,12 +35,12 @@ public class Border {
 		if (stato1 == null) {
 			if (other.stato1 != null)
 				return false;
-		} else if (!(stato1.equals(other.stato1)||stato1.equals(other.stato2)))
+		} else if (!(stato1.equals(other.stato1)))
 			return false;
 		if (stato2 == null) {
 			if (other.stato2 != null)
 				return false;
-		} else if (!(stato2.equals(other.stato2)||stato2.equals(other.stato1)))
+		} else if (!(stato2.equals(other.stato2)))
 			return false;
 		return true;
 	}

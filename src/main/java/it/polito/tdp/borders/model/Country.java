@@ -1,16 +1,18 @@
 package it.polito.tdp.borders.model;
 
-public class Country {
+public class Country implements Comparable<Country> {
 	
 	int id;
 	String sigla;
 	String nome;
+	int degree;
 	
 	public Country(int id, String sigla, String nome) {
 		super();
 		this.id = id;
 		this.sigla = sigla;
 		this.nome = nome;
+		degree=-1;
 	}
 	public int getId() {
 		return id;
@@ -29,6 +31,21 @@ public class Country {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	@Override
+	public String toString() {
+		String str="";
+		if(this.degree!=-1) {
+		str= this.nome  +" # "+this.degree+"\n";}
+		else {str= this.nome;}
+		return str;
+	}
+	public int getDegree() {
+		return degree;
+	}
+	public void setDegree(int degree) {
+		this.degree = degree;
 	}
 	@Override
 	public int hashCode() {
@@ -49,6 +66,11 @@ public class Country {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+	@Override
+	public int compareTo(Country o) {
+		
+		return this.nome.compareTo(o.nome);
 	}
 	
 	
